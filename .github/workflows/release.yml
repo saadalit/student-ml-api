@@ -1,3 +1,4 @@
+
 name: Release Container Image
 
 on:
@@ -69,14 +70,17 @@ jobs:
         with:
           context: .
           push: true
+
           tags: |
             ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.version }}
             ${{ env.IMAGE_NAME }}:latest
             ${{ env.IMAGE_NAME }}:${{ steps.version.outputs.short_sha }}
+
           build-args: |
             APP_VERSION=${{ steps.version.outputs.version }}
             VCS_REF=${{ steps.version.outputs.full_sha }}
             BUILD_DATE=${{ steps.version.outputs.build_date }}
+
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.version=${{ steps.version.outputs.version }}
