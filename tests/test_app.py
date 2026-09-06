@@ -10,7 +10,7 @@ def test_health_returns_expected_response():
 
     assert response.status_code == 200
     assert response.json() == {
-        "status": "healthy",
+        "status": "wrong",
         "application": "student-ml-api",
         "version": "1.0.0",
     }
