@@ -86,4 +86,5 @@ jobs:
             org.opencontainers.image.revision=${{ steps.version.outputs.full_sha }}
 
       - name: Display published image digest
-        run: echo "Published image digest: ${{ steps.build.outputs.digest }}"
+        run: |
+          echo "Published image digest: ${{ steps.build.outputs.digest }}"
