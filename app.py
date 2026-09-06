@@ -30,7 +30,8 @@ def health():
     return {
         "status": "healthy",
         "application": APP_NAME,
-        "version": get_application_version(),
+        "application_version": get_application_version(),
+        "model_version": "model-1",
     }
 
 

@@ -12,7 +12,8 @@ def test_health_returns_expected_response():
     assert response.json() == {
         "status": "healthy",
         "application": "student-ml-api",
-        "version": "1.0.2",
+        "application_version": "1.1.0",
+        "model_version": "model-1",
     }
 
 
