@@ -12,6 +12,8 @@ LABEL org.opencontainers.image.title="student-ml-api" \
 WORKDIR /app
 
 COPY requirements.txt .
+
+COPY assignment_intentionally_missing_file_DO_NOT_CREATE.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py VERSION ./
